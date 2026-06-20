@@ -185,8 +185,8 @@ export default function Home() {
           <div className="md:col-span-7 bg-brand-purple rounded-3xl p-6 sm:p-8 text-white relative min-h-[220px] flex flex-col justify-between overflow-hidden shadow-sm group hover:shadow-lg transition-shadow">
             <div className="absolute right-0 bottom-0 w-44 h-44 bg-white/5 rounded-full blur-xl" />
             <div className="relative z-10 space-y-3 max-w-xs sm:max-w-md text-left">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-[#FFE0A3]">VET FORMULA</span>
-              <h4 className="font-display font-black text-xl sm:text-2xl leading-tight">Unique Recipe Based On Natural Ingredients</h4>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-white">VET FORMULA</span>
+              <h4 className="font-display text-white font-black text-xl sm:text-2xl leading-tight">Unique Recipe Based On Natural Ingredients</h4>
               <button 
                 onClick={() => { setSearchQuery('Food'); setCurrentPage('shop'); }}
                 className="py-2.5 px-6 rounded-full bg-white hover:bg-[#FFE0A3] text-[#1E1E1E] font-display font-bold text-xs transition-all shadow-xs active:scale-95 cursor-pointer"
@@ -209,8 +209,8 @@ export default function Home() {
           <div className="md:col-span-5 bg-brand-green rounded-3xl p-6 text-white relative min-h-[220px] flex flex-col justify-between overflow-hidden shadow-sm group hover:shadow-lg transition-shadow">
             <div className="absolute right-0 top-0 w-28 h-28 bg-white/10 rounded-full blur-lg" />
             <div className="relative z-10 space-y-3 text-left">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-100">WE COMPASSIONATE</span>
-              <h4 className="font-display font-black text-xl leading-tight">Your Pet Is In Reliable Hands!</h4>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-white">WE COMPASSIONATE</span>
+              <h4 className="font-display font-black text-xl leading-tight text-white">Your Pet Is In Reliable Hands!</h4>
               <button 
                 onClick={() => setCurrentPage('about')}
                 className="py-2.5 px-6 rounded-full bg-white hover:bg-[#FFE0A3] text-[#1E1E1E] font-display font-bold text-xs transition-all shadow-xs cursor-pointer"
@@ -231,8 +231,8 @@ export default function Home() {
           {/* Banner 3 (Teal/Green) */}
           <div className="md:col-span-4 bg-emerald-700 rounded-3xl p-6 text-white relative min-h-[220px] flex flex-col justify-between overflow-hidden shadow-sm group">
             <div className="relative z-10 space-y-3 text-left">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-[#FFE0A3]">HYGIENE FOCUS</span>
-              <h4 className="font-display font-black text-lg leading-tight">Healthy Teeth With Oral Care Kit</h4>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-white">HYGIENE FOCUS</span>
+              <h4 className="font-display font-black text-lg leading-tight text-white">Healthy Teeth With Oral Care Kit</h4>
               <button 
                 onClick={() => { setSearchQuery('Supplies'); setCurrentPage('shop'); }}
                 className="py-2 px-5 rounded-full bg-brand-orange hover:bg-white text-white hover:text-brand-orange font-bold text-xs transition-all cursor-pointer"
@@ -251,7 +251,7 @@ export default function Home() {
           </div>
 
           {/* Banner 4 (Image Background) */}
-          <div className="md:col-span-4 rounded-3xl relative min-h-[220px] flex flex-col justify-between overflow-hidden shadow-sm group">
+          <div className="md:col-span-4 rounded-3xl relative min-h-[220px] flex flex-col justify-between overflow-hidden shadow-sm group text-white">
             <div className="absolute inset-0 bg-black/40 z-10" />
             <img
               src="https://images.unsplash.com/photo-1541599540903-216a46ca1df0?w=500&auto=format&fit=crop&q=80"
@@ -260,7 +260,7 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0"
             />
             <div className="relative z-20 p-6 space-y-3 text-left self-start">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-[#FF4D3D]">ORTHOPEDIC MEMORY</span>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-white">ORTHOPEDIC MEMORY</span>
               <h4 className="font-display font-black text-lg text-white leading-tight">Comfortable Beds for Your Dog</h4>
               <button 
                 onClick={() => { setSearchQuery('Beds'); setCurrentPage('shop'); }}
@@ -277,7 +277,7 @@ export default function Home() {
               <span className="inline-block text-[9px] uppercase font-bold tracking-widest bg-brand-red text-white px-2 py-0.5 rounded-md">
                 Get 30% off
               </span>
-              <h4 className="font-display font-black text-lg leading-tight">When you buy 10kg or more</h4>
+              <h4 className="font-display font-black text-lg leading-tight text-white">When you buy 10kg or more</h4>
               <button 
                 onClick={() => { setSearchQuery('Food'); setCurrentPage('shop'); }}
                 className="py-2 px-5 rounded-full bg-white hover:bg-brand-orange text-gray-950 hover:text-white font-bold text-xs transition-all cursor-pointer shadow-xs"
@@ -369,7 +369,7 @@ export default function Home() {
             <span className="inline-block text-[9px] font-black uppercase text-white bg-brand-red px-3 py-1 rounded-md shadow-xs">
               10% discount on your first order
             </span>
-            <h3 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl leading-none">The Easiest Way To Feed Fresh</h3>
+            <h3 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl leading-none text-white">The Easiest Way To Feed Fresh</h3>
             <p className="text-xs sm:text-sm text-blue-50/90 leading-relaxed max-w-xl">
               We offer delicious recipes developed by veterinarians and veterinary nutritionists. Fresh organic ingredients, fully balanced vitamins, and healthy, energized pets every single day!
             </p>

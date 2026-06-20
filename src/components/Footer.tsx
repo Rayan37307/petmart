@@ -1,34 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useApp } from '../context/AppContext';
 import { 
   Facebook, 
   Instagram, 
   Twitter, 
   Youtube, 
-  Linkedin, 
-  Pin, 
-  Send, 
   MapPin, 
   Clock, 
-  Phone, 
-  Mail, 
   Flame, 
   PawPrint 
 } from 'lucide-react';
 
 export default function Footer() {
   const { setCurrentPage, setSearchQuery } = useApp();
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (newsletterEmail.trim() === '') return;
-    setIsSubscribed(true);
-    setTimeout(() => {
-      setNewsletterEmail('');
-    }, 2500);
-  };
 
   const handleCategoryNav = (cat: string) => {
     setSearchQuery(cat);
@@ -42,57 +26,6 @@ export default function Footer() {
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-8 text-brand-orange fill-current">
           <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,53.05,22,81.13,31C157.06,55.57,238.12,68.13,321.39,56.44Z"></path>
         </svg>
-      </div>
-
-      {/* Blue Newsletter Card Peeking (Absolute layout style overlapping or embedded elegantly at top) */}
-      <div className="max-w-4xl mx-auto px-4 -translate-y-12">
-        <div className="relative bg-brand-blue rounded-3xl p-6 sm:p-8 shadow-xl overflow-hidden text-white flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Subtle Background Blobs */}
-          <div className="absolute right-0 bottom-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
-          <div className="absolute left-10 top-0 w-32 h-32 bg-brand-orange/15 rounded-full blur-xl" />
-          
-          <div className="relative z-10 space-y-2 max-w-md text-left">
-            <span className="text-[10px] bg-white text-brand-blue font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full">
-              PawMart Club
-            </span>
-            <h4 className="font-display font-bold text-xl sm:text-2xl leading-none">Sign Up to Us Newsletter</h4>
-            <p className="text-xs text-white/85">
-              Be the first to know about vet tips, brand fresh recipes, and premium member rewards!
-            </p>
-          </div>
-
-          <form onSubmit={handleSubscribe} className="relative z-10 w-full max-w-xs sm:max-w-sm flex flex-col sm:flex-row gap-2">
-            <div className="flex-1 relative">
-              <input
-                type="email"
-                required
-                placeholder="Your email address"
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-                className="w-full pl-4 pr-10 py-3 bg-white/10 text-white placeholder-white/60 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:bg-white/20 text-xs transition-all"
-              />
-              <Mail className="absolute right-3.5 top-3.5 h-4 w-4 text-white/55" />
-            </div>
-            
-            <button
-              type="submit"
-              className="py-3 px-6 rounded-xl bg-white hover:bg-gray-100 text-brand-blue font-bold text-xs transition-all flex items-center justify-center gap-1 shrink-0 cursor-pointer shadow-md"
-            >
-              {isSubscribed ? 'Thank you!' : 'Sign Up'}
-              {!isSubscribed && <Send className="w-3.5 h-3.5" />}
-            </button>
-          </form>
-
-          {/* Cute Cat peeking peeping from bottom of card! */}
-          <div className="absolute right-4 bottom-[-16px] hidden lg:block overflow-visible w-28 h-20">
-            <img
-              src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&auto=format&fit=crop&q=80"
-              alt="Peeking Cat icon"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-contain rounded-t-full border-t-2 border-white scale-x-[-1] translate-y-6 hover:translate-y-1 transition-transform duration-500"
-            />
-          </div>
-        </div>
       </div>
 
       {/* Main Footer Link Grid */}
