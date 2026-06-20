@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..900;1,300..900&family=Outfit:wght@300..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-blue: #2F55FF;
+  --color-brand-deep: #2144E8;
+  --color-brand-orange: #FF4D3D;
+  --color-brand-soft-orange: #FFECEB;
+  --color-brand-bg: #F5F5F8;
+  --color-brand-green: #4FA878;
+  --color-brand-purple: #6B4BD8;
+  --color-brand-red: #D8261A;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-[#1E1E1E] font-sans antialiased selection:bg-brand-blue selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-[#1E1E1E] tracking-tight;
+  }
+}
+
+/* Custom Paw background pattern generator with CSS */
+.paw-pattern-bg {
+  background-color: #2F55FF;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.orange-pattern-bg {
+  background-color: #FF4D3D;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.soft-orange-pattern-bg {
+  background-color: #FFECEB;
+  background-image: radial-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

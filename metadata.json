@@ -1,0 +1,6 @@
+{
+  "name": "PawMart",
+  "description": "PawMart: A modern, playful pet store ecommerce demo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
