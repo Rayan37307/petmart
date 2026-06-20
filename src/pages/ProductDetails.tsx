@@ -75,13 +75,55 @@ export default function ProductDetails() {
 
   const isFav = isInWishlist(product.id);
 
-  // Decorative thumbnail variations
+  const PRODUCT_THUMBNAILS: Record<string, string[]> = {
+    "royal-canin-fit-32-adult-cat-food-2kg": [
+      "https://media.zooplus.com/bilder/9/400/fit_9.jpg?format=webp&width=400",
+      "https://media.zooplus.com/bilder/4/400/rc_fhn_fit32_mv_eretailkit__4.jpg?format=webp&width=400",
+      "https://media.zooplus.com/bilder/2/800/61210_pla_royalcanin_fit32_2.jpg?format=webp&width=400"
+    ],
+    "whiskas-1-adult-chicken-in-jelly-85g": [
+      "https://static1.viovet.co.uk/opt/s%3Dkr%2Cwidth%3D720%2Cheight%3D720/familygallery/whiskas-1-cat-pouches-chicken-in-jelly-p07y.jpg.webp",
+      "https://static2.viovet.co.uk/opt/s%3Dkr%2Cwidth%3D360%2Cheight%3D360/familygallery/whiskas-1-cat-pouches-chicken-in-jelly-mp0t.jpg.webp"
+    ],
+    "taste-of-the-wild-high-prairie-puppy-14lb": [
+      "https://image.chewy.com/is/image/catalog/101889_MAIN._AC_SL600_V1699022075_.jpg",
+      "https://image.chewy.com/is/image/catalog/101889_PT1._AC_SL600_V1699022075_.jpg",
+      "https://image.chewy.com/is/image/catalog/101889_PT2._AC_SL600_V1699022075_.jpg"
+    ],
+    "hills-science-diet-adult-chicken-barley-3kg": [
+      "https://pxmshare.colgatepalmolive.com/PNG_2000/8QGSStOoCB6RakdoYx2np.png",
+      "https://image.chewy.com/is/image/catalog/69666_MAIN._AC_SL600_V1709158030_.jpg",
+      "https://image.chewy.com/is/image/catalog/69666_PT1._AC_SL600_V1709158030_.jpg"
+    ],
+    "kong-classic-treat-dispensing-dog-toy-large": [
+      "https://s7d2.scene7.com/is/image/PetSmart/1811625?fmt=webp&hei=600&wid=600",
+      "https://s7d2.scene7.com/is/image/PetSmart/1811625_ALT1?fmt=webp&hei=600&wid=600",
+      "https://s7d2.scene7.com/is/image/PetSmart/1811625_ALT2?fmt=webp&hei=600&wid=600"
+    ],
+    "pedigree-dentastix-large-dog-28-sticks": [
+      "https://www.pedigree.co.nz/cdn-cgi/image/width%3D472%2Cheight%3D472%2Cf%3Dauto%2Cquality%3D90/sites/g/files/fnmzdf3281/files/2026-03/9334214018805_2_PEDIGREE_DENTASTIX_Dog_Treats_Daily_Oral_Care_Large_Dog_28_Sticks.png",
+      "https://www.pedigree.co.nz/cdn-cgi/image/width%3D472%2Cheight%3D472%2Cf%3Dauto%2Cquality%3D90/sites/g/files/fnmzdf3281/files/2026-03/9334214018805_3_PEDIGREE_DENTASTIX_Dog_Treats_Daily_Oral_Care_Large_Dog_28_Sticks.png",
+      "https://www.pedigree.co.nz/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cf%3Dauto%2Cquality%3D90/sites/g/files/fnmzdf3281/files/2026-03/9334214018805_1_PEDIGREE_DENTASTIX_Dog_Treats_Daily_Oral_Care_Large_Dog_28_Sticks.png"
+    ],
+    "catit-senses-2-super-circuit-interactive-cat-toy": [
+      "https://www.catit.com/wp-content/uploads/2022/03/Catit-Circuits-Super-Circuit.jpg",
+      "https://www.catit.com/wp-content/uploads/2022/03/catit-super-ciruit-parts-1024x400.jpg",
+      "https://www.catit.com/wp-content/uploads/2022/03/Catit-Circuits-layouts.jpg"
+    ],
+    "hartz-groomers-best-combo-brush-dogs": [
+      "https://image.chewy.com/is/image/catalog/126663_MAIN._AC_SL600_V1699054015_.jpg",
+      "https://image.chewy.com/is/image/catalog/126663_PT1._AC_SL600_V1699054015_.jpg",
+      "https://image.chewy.com/is/image/catalog/126663_PT2._AC_SL600_V1699054015_.jpg"
+    ]
+  };
+
   const imageThumbnails = [
     product.image,
-    "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=300&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&auto=format&fit=crop&q=80"
-  ];
+    ...(PRODUCT_THUMBNAILS[product.slug] ?? [])
+  ]
+    .filter(Boolean)
+    .filter((img, index, arr) => arr.indexOf(img) === index)
+    .slice(0, 4);
 
   // Specific FAQs for product accordion
   const faqItems = [
